@@ -54,6 +54,6 @@ func checkIfTableExists(name string, db orm.DB) (bool, error) {
 
 func createTable(model interface{}, db orm.DB) error {
 	opts := orm.CreateTableOptions{IfNotExists: true}
-	_, err := orm.CreateTable(db, model, &opts)
+	err := orm.CreateTable(db, model, &opts)
 	return err
 }
